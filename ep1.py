@@ -59,9 +59,8 @@ def main():
     game_over = False
     while not game_over:
         cenario_atual = cenarios[nome_cenario_atual]
+        
 
-        # Aluno A: substitua este comentário pelo código para imprimir 
-        # o cenário atual.
 
         opcoes = cenario_atual['opcoes']
         if len(opcoes) == 0:
@@ -88,3 +87,13 @@ def main():
 # Programa principal.
 if __name__ == "__main__":
     main()
+
+
+    
+    
+    
+    
+    
+    
+    
+    
