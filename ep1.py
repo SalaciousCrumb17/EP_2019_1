@@ -68,10 +68,13 @@ def main():
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         else:
+            print("Escolha sua opção: ")
+            opcoes= (cenarios[nome_cenario_atual]["opcoes"])
+            for lugar, caminho in opcoes.items():
+                print("{0}: {1}".format(lugar, caminho))
 
-            # Aluno B: substitua este comentário e a linha abaixo pelo código
-            # para pedir a escolha do usuário.
-            escolha = ""
+
+            escolha=input("Escolha sua opção: ")
 
             if escolha in opcoes:
                 nome_cenario_atual = escolha
