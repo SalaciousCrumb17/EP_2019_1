@@ -12,7 +12,11 @@ def carregar_cenarios():
             "descricao": "Voce esta no saguao de entrada do insper",
             "opcoes": {
                 "andar professor": "Tomar o elevador para o andar do professor",
-                "biblioteca": "Ir para a biblioteca"
+                "biblioteca": "Ir para a biblioteca",
+                "refeitorio": "Ir para o refeitorio",
+                "quadra": "Ir para a quadra",
+                "banheiro" : "Ir para o banheiro"
+                
             }
         },
         "andar professor": {
@@ -36,10 +40,35 @@ def carregar_cenarios():
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada"
             }
+        },
+        "refeitorio": {
+            "titulo": "Estábulo do Ponei Saltitante",
+            "descricao": "Voce esta norefeitorio",
+            "opcoes": {
+                "inicio": "Voltar para o saguao de entrada",
+                "ovo": "coletar o ovo do dragao"
+            }
+        },
+        "quadra": {
+            "titulo": "O coliseu do desafio",
+            "descricao": "Voce esta na quadra",
+            "opcoes": {
+                "inicio": "Voltar para o saguao de entrada",
+                "jogo": "desafiar o gigante apra um duelo"
+            }
+        },
+        "banheiro": {
+            "titulo": "O banheiro",
+            "descricao": "Voce esta no banheiro",
+            "opcoes": {
+                "inicio": "Voltar para o saguao de entrada",
+                "papel": "coletar o papirus higienico"
+            }
         }
     }
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
+
 
 
 def main():
@@ -53,7 +82,9 @@ def main():
         "na entrada do Insper, e quer procurar o professor para pedir um "
         "adiamento do EP (boa sorte...)")
     print()
-
+    
+    bolsa = []
+    
     cenarios, nome_cenario_atual = carregar_cenarios()
 
     game_over = False
@@ -74,9 +105,13 @@ def main():
 
 
             escolha=input("Escolha sua opção: ")
-
-            if escolha in opcoes:
+            if (escolha == "ovo") or (escolha == "papel"):
+                 if escolha not in bolsa:
+                    bolsa.append(escolha)
+            elif escolha in opcoes:
                 nome_cenario_atual = escolha
+
+                
             else:
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
