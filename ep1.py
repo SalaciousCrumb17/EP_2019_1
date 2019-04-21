@@ -5,11 +5,15 @@
 # - aluno B: Alexandre GOnçalves Cury, alexandregc2@al.insper.edu.br
 # - aluno C: Samuel
 
+import random
 def carregar_cenarios():
     cenarios = {
         "inicio": {
             "titulo": "Saguao do perigo",
             "descricao": "Voce esta no saguao de entrada do insper",
+            "monstro":0,
+            "hit": 0,
+            "coins":0,
             "opcoes": {
                 "andar professor": "Tomar o elevador para o andar do professor",
                 "biblioteca": "Ir para a biblioteca",
@@ -22,52 +26,72 @@ def carregar_cenarios():
         "andar professor": {
             "titulo": "Andar do desespero",
             "descricao": "Voce chegou ao andar da sala do seu professor",
+            "monstro": "veterano",
+            "hit": 10,
+            "coins":10,
             "opcoes": {
                 "inicio": "Tomar o elevador para o saguao de entrada",
-                "professor": "Falar com o professor"
-            }
+                "professor": "Falar com o professor",
+                },
         },
         "professor": {
             "titulo": "O monstro do Python",
+            "monstro":0,
+            "hit":0,
+            "coins":0,
             "descricao": "Voce foi pedir para o professor adiar o EP. "
                          "O professor revelou que é um monstro disfarçado "
                          "e devorou sua alma.",
-            "opcoes": {}
+            "opcoes": {},
+            
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
             "descricao": "Voce esta na biblioteca",
+            "monstro": "veterano",
+            "hit": 10,
+            "coins":10,
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada"
-            }
+                },
         },
         "refeitorio": {
             "titulo": "Estábulo do Ponei Saltitante",
             "descricao": "Voce esta norefeitorio",
+            "monstro": "veterano",
+            "hit": 10,
+            "coins":10,
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada",
-                "ovo": "coletar o ovo do dragao"
-            }
+                "ovo": "coletar o ovo do dragao"}
         },
         "quadra": {
             "titulo": "O coliseu do desafio",
+            "monstro": "veterano",
+            "hit": 10,
+            "coins":10,
             "descricao": "Voce esta na quadra",
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada",
                 "jogo": "desafiar o gigante apra um duelo"
-            }
+                }
+                
         },
         "banheiro": {
             "titulo": "O banheiro",
             "descricao": "Voce esta no banheiro",
+            "monstro": "veterano",
+            "hit": 10,
+            "coins":10,
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada",
                 "papel": "coletar o papirus higienico"
-            }
+                },
         }
     }
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
+
 
 
 
@@ -84,7 +108,8 @@ def main():
     print()
     
     bolsa = []
-    
+    life= 100
+    moeda=0
     cenarios, nome_cenario_atual = carregar_cenarios()
 
     game_over = False
@@ -105,6 +130,23 @@ def main():
 
 
             escolha=input("Escolha sua opção: ")
+            ataque= random.randint(False, True)
+            moedas= random.randint(False, True)
+            
+            if escolha!= "inicio" and escolha!= "professor":
+                if ataque==True:
+                    cenarios, nome_cenario_atual = carregar_cenarios()
+                    cenario_atual = cenarios[escolha]
+                    monstro=(cenario_atual["monstro"])
+                    hit=(cenario_atual["hit"])
+                    coins= (cenario_atual["coins"])
+                    print("Um {0} te atacou, e tirou {1} da sua vida".format(monstro, hit))
+                    life-= hit
+                if moedas== True:
+                    print("Você ganhou {0} coins nesta sala".format(coins))
+                    moeda+= coins
+
+
             if (escolha == "ovo") or (escolha == "papel"):
                  if escolha not in bolsa:
                     bolsa.append(escolha)
@@ -116,7 +158,10 @@ def main():
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
 
+    if life<1:
+        print("Você não resistiu ao ultimo monstro!")
     print("Você morreu!")
+    print("Você tinha {0} coins".format(coins))
 
 
 # Programa principal.
