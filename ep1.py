@@ -141,7 +141,7 @@ def main():
             ataque= random.randint(False, True)
             moedas= random.randint(False, True)
             
-            if escolha!= "ovo" and escolha!="papel":
+            if escolha!= "ovo" and escolha!="papel" and escolha!= "jogo":
                 cenarios, nome_cenario_atual = carregar_cenarios()
                 cenario_atual = cenarios[escolha]
                 monstro=(cenario_atual["monstro"])
