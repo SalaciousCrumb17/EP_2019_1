@@ -71,7 +71,8 @@ def carregar_cenarios():
 
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada",
-                "ovo": "coletar o ovo do dragao"}
+                "ovo": "coletar o ovo do dragao"
+                }
         },
         "quadra": {
             "titulo": "O coliseu do desafio",
