@@ -5,6 +5,7 @@
 # - aluno B: Alexandre GOnçalves Cury, alexandregc2@al.insper.edu.br
 # - aluno C: Samuel
 
+
 def carregar_cenarios():
     cenarios = {
         "inicio": {
@@ -38,12 +39,13 @@ def carregar_cenarios():
             "titulo": "Caverna da tranquilidade",
             "descricao": "Voce esta na biblioteca",
             "opcoes": {
-                "inicio": "Voltar para o saguao de entrada"
+                "inicio": "Voltar para o saguao de entrada",
+                "livro": "pegar a cronica de dor e gloria"
             }
         },
         "refeitorio": {
             "titulo": "Estábulo do Ponei Saltitante",
-            "descricao": "Voce esta norefeitorio",
+            "descricao": "Voce esta no refeitorio",
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada",
                 "ovo": "coletar o ovo do dragao"
@@ -108,6 +110,13 @@ def main():
             if (escolha == "ovo") or (escolha == "papel"):
                  if escolha not in bolsa:
                     bolsa.append(escolha)
+                    print ('voce coletou o item')
+            elif (escolha == "livro"):
+                 if escolha not in bolsa:
+                    bolsa.append(escolha)
+                    print ('voce coletou o item')
+            elif (escolha in bolsa) == True:
+                print ('voce ja tem este item')
             elif escolha in opcoes:
                 nome_cenario_atual = escolha
 
@@ -116,7 +125,7 @@ def main():
                 print("Sua indecisão foi sua ruína!")
                 game_over = True
 
-    print("Você morreu!")
+    print("Você morreu!") 
 
 
 # Programa principal.
