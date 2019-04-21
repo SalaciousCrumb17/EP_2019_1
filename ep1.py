@@ -142,13 +142,13 @@ def main():
             ataque= random.randint(False, True)
             moedas= random.randint(False, True)
             
-            if escolha!= "inicio" and escolha!= "professor":
-                if ataque==True:
-                    cenarios, nome_cenario_atual = carregar_cenarios()
-                    cenario_atual = cenarios[escolha]
-                    monstro=(cenario_atual["monstro"])
-                    hit=(cenario_atual["hit"])
-                    coins= (cenario_atual["coins"])
+            if escolha!= "ovo" and escolha!="papel" and escolha!= "jogo":
+                cenarios, nome_cenario_atual = carregar_cenarios()
+                cenario_atual = cenarios[escolha]
+                monstro=(cenario_atual["monstro"])
+                hit=(cenario_atual["hit"])
+                coins= (cenario_atual["coins"])
+                if ataque==True and hit>0:
                     print("Um {0} te atacou, e tirou {1} da sua vida".format(monstro, hit))
                     life-= hit
                 if moedas== True:
