@@ -24,7 +24,15 @@ def carregar_cenarios():
                 "refeitorio": "Ir para o refeitorio",
                 "quadra": "Ir para a quadra",
                 "banheiro" : "Ir para o banheiro",
+<<<<<<< HEAD
                 "estacionamento": "Ir para o estacionamento"
+=======
+<<<<<<< HEAD
+                "Estacionamento": "Ir para o estacionamento"
+=======
+                "teleporte": "Ir para a sala de teleporte"
+>>>>>>> 88a0974bf238f76a61c9f1f5f2151ea32ad9ac72
+>>>>>>> 8540eb165a1ec1853de1a26222393714a8924461
                 
             }
         },
@@ -97,8 +105,27 @@ def carregar_cenarios():
                 "inicio": "Voltar para o saguao de entrada",
                 "papel": "coletar o papirus higienico"
                 }
+<<<<<<< HEAD
 
         
+=======
+<<<<<<< HEAD
+        
+        },
+        "Estacionamento": {
+                "titulo": "A Sala de Teleporte",
+                "descricao": "Diga o nome de onde voce quer ir",
+                "monstro": "veterano",
+                "hit": 10,
+                "coins":10,
+                "opcoes": {
+                        "teleporte": "Teleportar para qualquer sala",
+                        "inicio": "Retornar ao Inicio"
+                       
+                        }
+                }
+=======
+>>>>>>> 8540eb165a1ec1853de1a26222393714a8924461
         },
         "estacionamento": {
                 "titulo": "s sala de teleporte",
@@ -113,7 +140,12 @@ def carregar_cenarios():
                         }
                 }
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 88a0974bf238f76a61c9f1f5f2151ea32ad9ac72
+    }
+>>>>>>> 8540eb165a1ec1853de1a26222393714a8924461
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
@@ -182,6 +214,7 @@ def main():
                 if escolha not in bolsa:
                     bolsa.append(escolha)
                     print ('voce coletou o item')
+<<<<<<< HEAD
                     
             elif (escolha == "teleporte"):
                 telep = input('para qual sala: ')
@@ -213,6 +246,12 @@ def main():
                         
                     
 
+=======
+            elif (escolha == "teleporte"):
+                x= input('para qual sala?: ')
+                if (x == "biblioteca"):
+                    nome_cenario_atual = "biblioteca"
+>>>>>>> 8540eb165a1ec1853de1a26222393714a8924461
 
 
             elif escolha in opcoes:
