@@ -23,7 +23,8 @@ def carregar_cenarios():
                 "biblioteca": "Ir para a biblioteca",
                 "refeitorio": "Ir para o refeitorio",
                 "quadra": "Ir para a quadra",
-                "banheiro" : "Ir para o banheiro"
+                "banheiro" : "Ir para o banheiro",
+                "Estacionamento": "Ir para o estacionamento"
                 
             }
         },
@@ -94,14 +95,27 @@ def carregar_cenarios():
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada",
                 "papel": "coletar o papirus higienico"
-                },
-        }
+                }
+        
+        },
+        "Estacionamento": {
+                "titulo": "A Sala de Teleporte",
+                "descricao": "Diga o nome de onde voce quer ir",
+                "monstro": "veterano",
+                "hit": 10,
+                "coins":10,
+                "opcoes": {
+                        "teleporte": "Teleportar para qualquer sala",
+                        "inicio": "Retornar ao Inicio"
+                       
+                        }
+                }
     }
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
 
-
+        
 
 def main():
     print("Na hora do sufoco!")
@@ -165,6 +179,10 @@ def main():
                 if escolha not in bolsa:
                     bolsa.append(escolha)
                     print ('voce coletou o item')
+            elif (escolha == "teleporte"):
+                x= input('para qual sala?: ')
+                if (x == "biblioteca"):
+                    nome_cenario_atual = "biblioteca"
 
 
             elif escolha in opcoes:
