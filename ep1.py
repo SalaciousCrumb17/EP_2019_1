@@ -2,8 +2,8 @@
 #
 # Alunos: 
 # - aluno A: Lucas Ohara, lucasso1@al.insper.edu.br
-# - aluno B: Alexandre GOnçalves Cury, alexandregc2@al.insper.edu.br
-# - aluno C: Samuel
+# - aluno B: Alexandre Gonçalves Cury, alexandregc2@al.insper.edu.br
+# - aluno C: Samuel MacDowell, samuelmdff@al.insper.edu.br
 
 
 
@@ -24,16 +24,7 @@ def carregar_cenarios():
                 "refeitorio": "Ir para o refeitorio",
                 "quadra": "Ir para a quadra",
                 "banheiro" : "Ir para o banheiro",
-<<<<<<< HEAD
-                "estacionamento": "Ir para o estacionamento"
-=======
-<<<<<<< HEAD
-                "Estacionamento": "Ir para o estacionamento"
-=======
-                "teleporte": "Ir para a sala de teleporte"
->>>>>>> 88a0974bf238f76a61c9f1f5f2151ea32ad9ac72
->>>>>>> 8540eb165a1ec1853de1a26222393714a8924461
-                
+                "estacionamento": "Ir para o estacionamento"                
             }
         },
         "andar professor": {
@@ -105,27 +96,6 @@ def carregar_cenarios():
                 "inicio": "Voltar para o saguao de entrada",
                 "papel": "coletar o papirus higienico"
                 }
-<<<<<<< HEAD
-
-        
-=======
-<<<<<<< HEAD
-        
-        },
-        "Estacionamento": {
-                "titulo": "A Sala de Teleporte",
-                "descricao": "Diga o nome de onde voce quer ir",
-                "monstro": "veterano",
-                "hit": 10,
-                "coins":10,
-                "opcoes": {
-                        "teleporte": "Teleportar para qualquer sala",
-                        "inicio": "Retornar ao Inicio"
-                       
-                        }
-                }
-=======
->>>>>>> 8540eb165a1ec1853de1a26222393714a8924461
         },
         "estacionamento": {
                 "titulo": "s sala de teleporte",
@@ -140,12 +110,7 @@ def carregar_cenarios():
                         }
                 }
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> 88a0974bf238f76a61c9f1f5f2151ea32ad9ac72
-    }
->>>>>>> 8540eb165a1ec1853de1a26222393714a8924461
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
@@ -205,22 +170,33 @@ def main():
 
 
             if (escolha == "ovo") or (escolha == "papel"):
+                if escolha in bolsa:
+                     print('voce ja tem esse item')                
                 if escolha not in bolsa:
                     bolsa.append(escolha)
                     print ('voce coletou o item')
-                if escolha in bolsa == True:
-                     print('voce ja tem esse item')
+
             elif (escolha == "livro") or (escolha == "bola"):
+                if escolha in bolsa:
+                     print('voce ja tem esse item')                
                 if escolha not in bolsa:
                     bolsa.append(escolha)
                     print ('voce coletou o item')
-<<<<<<< HEAD
                     
             elif (escolha == "teleporte"):
                 telep = input('para qual sala: ')
                 if (telep == "biblioteca"):
-                    nome_cenario_atual = "biblioteca"
-
+                    nome_cenario_atual = telep
+                if (telep == "refeitorio"):
+                    nome_cenario_atual = telep
+                if (telep == "inicio"):
+                    nome_cenario_atual = telep
+                if (telep == "quadra"):
+                    nome_cenario_atual = telep
+                if (telep == "banheiro"):
+                    nome_cenario_atual = telep
+                if (telep == "andar professor"):
+                    nome_cenario_atual = telep
 
                     
             elif (escolha == "professor"):
@@ -243,15 +219,12 @@ def main():
                         print('CHEGA DE GRACINHAS, DEVORAREI SUA ALMA')
                         game_over = True
                         
-                        
-                    
 
-=======
             elif (escolha == "teleporte"):
                 x= input('para qual sala?: ')
                 if (x == "biblioteca"):
                     nome_cenario_atual = "biblioteca"
->>>>>>> 8540eb165a1ec1853de1a26222393714a8924461
+
 
 
             elif escolha in opcoes:
