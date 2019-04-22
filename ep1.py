@@ -23,7 +23,8 @@ def carregar_cenarios():
                 "biblioteca": "Ir para a biblioteca",
                 "refeitorio": "Ir para o refeitorio",
                 "quadra": "Ir para a quadra",
-                "banheiro" : "Ir para o banheiro"
+                "banheiro" : "Ir para o banheiro",
+                "teleporte": "Ir para a sala de teleporte"
                 
             }
         },
@@ -95,7 +96,18 @@ def carregar_cenarios():
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada",
                 "papel": "coletar o papirus higienico"
-                },
+                }
+        },
+        "teleporte": {
+            "titulo": "A camara do Teleporte",
+            "descricao": "voce esta na camara de teleporte",
+            "monstro": "veterano",
+            "hit": 10,
+            "coins":10,
+            "opcoes":  {
+                "inicio": "Voltar para o saguao de entrada",
+                "teleporte": "teleportar para outras areas"
+                }
         }
     }
     nome_cenario_atual = "inicio"
