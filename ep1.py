@@ -24,7 +24,7 @@ def carregar_cenarios():
                 "refeitorio": "Ir para o refeitorio",
                 "quadra": "Ir para a quadra",
                 "banheiro" : "Ir para o banheiro",
-                "teleporte": "Ir para a sala de teleporte"
+                "estacionamento": "Ir para o estacionamento"
                 
             }
         },
@@ -83,7 +83,7 @@ def carregar_cenarios():
             "descricao": "Voce esta na quadra",
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada",
-                "jogo": "desafiar o gigante apra um duelo"
+                "bola": "obter a bola do gigante da cesta"
                 }
                 
         },
@@ -97,24 +97,28 @@ def carregar_cenarios():
                 "inicio": "Voltar para o saguao de entrada",
                 "papel": "coletar o papirus higienico"
                 }
+
+        
         },
-        "teleporte": {
-            "titulo": "A camara do Teleporte",
-            "descricao": "voce esta na camara de teleporte",
-            "monstro": "veterano",
-            "hit": 10,
-            "coins":10,
-            "opcoes":  {
-                "inicio": "Voltar para o saguao de entrada",
-                "teleporte": "teleportar para outras areas"
+        "estacionamento": {
+                "titulo": "s sala de teleporte",
+                "descricao": "diga o nome de onde voce quer ir",
+                "monstro": "veterano",
+                "hit": 10,
+                "coins":10,
+                "opcoes": {
+                        "teleporte": "teleportar para qualquer sala",
+                        "inicio": "retornar ao Inicio"
+                       
+                        }
                 }
         }
-    }
+
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
 
 
-
+        
 
 def main():
     print("Na hora do sufoco!")
@@ -154,9 +158,9 @@ def main():
             ataque= random.randint(False, True)
             moedas= random.randint(False, True)
             
-            if escolha!= "ovo" and escolha!="papel" and escolha!= "jogo":
+            if escolha!= "ovo" and escolha!="papel" and escolha!= "bola" and escolha!= "livro":
                 cenarios, nome_cenario_atual = carregar_cenarios()
-                cenario_atual = cenarios[escolha]
+                
                 monstro=(cenario_atual["monstro"])
                 hit=(cenario_atual["hit"])
                 coins= (cenario_atual["coins"])
@@ -174,10 +178,41 @@ def main():
                     print ('voce coletou o item')
                 if escolha in bolsa == True:
                      print('voce ja tem esse item')
-            elif (escolha == "livro"):
+            elif (escolha == "livro") or (escolha == "bola"):
                 if escolha not in bolsa:
                     bolsa.append(escolha)
                     print ('voce coletou o item')
+                    
+            elif (escolha == "teleporte"):
+                telep = input('para qual sala: ')
+                if (telep == "biblioteca"):
+                    nome_cenario_atual = "biblioteca"
+
+
+                    
+            elif (escolha == "professor"):
+                if len(bolsa) <4:
+                    print ('"nao falo com voce ate que pegue todos os itens."')
+                    print ('"retorne ao lobby e nao volte ate conseguir"')
+                    print ('-disse o professor')
+                if len(bolsa) == 4:
+                    print('huh, voce quer atrasar a entrega do EP?')
+                    print('pois bem, quantos dias voce quer atrasar?')
+                    print('seja razoavel, e lhe ajudarei')
+                    print('seja ganancioso, e comerei a sua alma')
+                    x = int(input('dias: '))
+                    if (0 < x < 7):
+                        print('Certo, achei justo')
+                        print('------------------')
+                        print('VOCE VENCEU O JOGO')
+                        break
+                    else:
+                        print('CHEGA DE GRACINHAS, DEVORAREI SUA ALMA')
+                        game_over = True
+                        
+                        
+                    
+
 
 
             elif escolha in opcoes:
@@ -189,11 +224,11 @@ def main():
                 game_over = True
 
 
-    print("Você morreu!") 
+    print("game over!") 
 
     if life<1:
         print("Você não resistiu ao ultimo monstro!")
-    print("Você morreu!")
+    print("game over!")
     print("Você tinha {0} coins".format(coins))
 
 
