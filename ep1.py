@@ -24,7 +24,11 @@ def carregar_cenarios():
                 "refeitorio": "Ir para o refeitorio",
                 "quadra": "Ir para a quadra",
                 "banheiro" : "Ir para o banheiro",
+<<<<<<< HEAD
                 "Estacionamento": "Ir para o estacionamento"
+=======
+                "teleporte": "Ir para a sala de teleporte"
+>>>>>>> 88a0974bf238f76a61c9f1f5f2151ea32ad9ac72
                 
             }
         },
@@ -72,7 +76,8 @@ def carregar_cenarios():
 
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada",
-                "ovo": "coletar o ovo do dragao"}
+                "ovo": "coletar o ovo do dragao"
+                }
         },
         "quadra": {
             "titulo": "O coliseu do desafio",
@@ -96,6 +101,7 @@ def carregar_cenarios():
                 "inicio": "Voltar para o saguao de entrada",
                 "papel": "coletar o papirus higienico"
                 }
+<<<<<<< HEAD
         
         },
         "Estacionamento": {
@@ -110,6 +116,20 @@ def carregar_cenarios():
                        
                         }
                 }
+=======
+        },
+        "teleporte": {
+            "titulo": "A camara do Teleporte",
+            "descricao": "voce esta na camara de teleporte",
+            "monstro": "veterano",
+            "hit": 10,
+            "coins":10,
+            "opcoes":  {
+                "inicio": "Voltar para o saguao de entrada",
+                "teleporte": "teleportar para outras areas"
+                }
+        }
+>>>>>>> 88a0974bf238f76a61c9f1f5f2151ea32ad9ac72
     }
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
