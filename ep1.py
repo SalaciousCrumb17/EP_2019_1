@@ -167,7 +167,7 @@ def main():
                 if moedas== True:
                     print("Você ganhou {0} coins nesta sala".format(coins))
                     moeda+= coins
-
+            
 
             if (escolha == "ovo") or (escolha == "papel"):
                 if escolha in bolsa:
@@ -197,7 +197,8 @@ def main():
                     nome_cenario_atual = telep
                 if (telep == "andar professor"):
                     nome_cenario_atual = telep
-
+            
+            
                     
             elif (escolha == "professor"):
                 if len(bolsa) <4:
@@ -224,10 +225,11 @@ def main():
                 x= input('para qual sala?: ')
                 if (x == "biblioteca"):
                     nome_cenario_atual = "biblioteca"
+            elif (nome_cenario_atual  == "biblioteca"):
+                return "descricao"
+                print("-"*len(nome_cenario_atual))
 
-
-
-            elif escolha in opcoes:
+            elif escolha in opcoes: 
                 nome_cenario_atual = escolha
 
                 
