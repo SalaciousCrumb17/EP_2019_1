@@ -98,7 +98,7 @@ def carregar_cenarios():
                 }
         },
         "estacionamento": {
-                "titulo": "s sala de teleporte",
+                "titulo": "A sala de teleporte",
                 "descricao": "diga o nome de onde voce quer ir",
                 "monstro": "Monstro do Estacionamento",
                 "hit": 10,
@@ -113,9 +113,8 @@ def carregar_cenarios():
 
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
+   
 
-
-        
 
 def main():
     print("Na hora do sufoco!")
@@ -145,6 +144,12 @@ def main():
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         else:
+            print()
+            print(cenarios[nome_cenario_atual]["titulo"])
+            x = len(cenarios[nome_cenario_atual]["titulo"])
+            print(x*"-")
+            print(cenarios[nome_cenario_atual]["descricao"])
+            print()
             print("Escolha sua opção: ")
             opcoes= (cenarios[nome_cenario_atual]["opcoes"])
             for lugar, caminho in opcoes.items():
@@ -157,7 +162,6 @@ def main():
             
             if escolha!= "ovo" and escolha!="papel" and escolha!= "bola" and escolha!= "livro":
                 cenarios, nome_cenario_atual = carregar_cenarios()
-                cenario_atual=cenarios[escolha]
 
                 monstro=(cenario_atual["monstro"])
                 hit=(cenario_atual["hit"])
