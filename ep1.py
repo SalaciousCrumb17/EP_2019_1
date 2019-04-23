@@ -51,7 +51,7 @@ def carregar_cenarios():
         },
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
-            "descricao": "Voce esta na biblioteca",
+            "descricao": "Voce esta na biblioteca de alexandria",
             "monstro": "Nilo Ney",
             "hit": 10,
             "coins":10,
@@ -64,7 +64,7 @@ def carregar_cenarios():
         },
         "refeitorio": {
             "titulo": "Estábulo do Ponei Saltitante",
-            "descricao": "Voce esta no refeitorio",
+            "descricao": "Voce esta na cantina dos mercenarios",
             "monstro": "Bandeja Assassina",
             "hit": 10,
             "coins":10,
@@ -79,7 +79,7 @@ def carregar_cenarios():
             "monstro": "Bola Voadora",
             "hit": 10,
             "coins":10,
-            "descricao": "Voce esta na quadra",
+            "descricao": "Voce esta no coliseu do desafio",
             "opcoes": {
                 "inicio": "Voltar para o saguao de entrada",
                 "bola": "obter a bola do gigante da cesta"
@@ -88,7 +88,7 @@ def carregar_cenarios():
         },
         "banheiro": {
             "titulo": "O banheiro",
-            "descricao": "Voce esta no banheiro",
+            "descricao": "Voce esta no aliviador das aflicoes",
             "monstro": "Sanitário Ambulante",
             "hit": 10,
             "coins":10,
@@ -230,9 +230,7 @@ def main():
                 x= input('para qual sala?: ')
                 if (x == "biblioteca"):
                     nome_cenario_atual = "biblioteca"
-            elif (nome_cenario_atual  == "biblioteca"):
-                return "descricao"
-                print("-"*len(nome_cenario_atual))
+          
 
             elif escolha in opcoes: 
                 nome_cenario_atual = escolha
