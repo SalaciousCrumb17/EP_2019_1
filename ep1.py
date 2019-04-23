@@ -30,7 +30,7 @@ def carregar_cenarios():
         "andar professor": {
             "titulo": "Andar do desespero",
             "descricao": "Voce chegou ao andar da sala do seu professor",
-            "monstro": "veterano",
+            "monstro": "Lixo Ambulante",
             "hit": 10,
             "coins":10,
             "opcoes": {
@@ -52,7 +52,7 @@ def carregar_cenarios():
         "biblioteca": {
             "titulo": "Caverna da tranquilidade",
             "descricao": "Voce esta na biblioteca",
-            "monstro": "veterano",
+            "monstro": "Nilo Ney",
             "hit": 10,
             "coins":10,
             "opcoes": {
@@ -65,7 +65,7 @@ def carregar_cenarios():
         "refeitorio": {
             "titulo": "Estábulo do Ponei Saltitante",
             "descricao": "Voce esta no refeitorio",
-            "monstro": "veterano",
+            "monstro": "Bandeja Assassina",
             "hit": 10,
             "coins":10,
 
@@ -76,7 +76,7 @@ def carregar_cenarios():
         },
         "quadra": {
             "titulo": "O coliseu do desafio",
-            "monstro": "veterano",
+            "monstro": "Bola Voadora",
             "hit": 10,
             "coins":10,
             "descricao": "Voce esta na quadra",
@@ -89,7 +89,7 @@ def carregar_cenarios():
         "banheiro": {
             "titulo": "O banheiro",
             "descricao": "Voce esta no banheiro",
-            "monstro": "veterano",
+            "monstro": "Sanitário Ambulante",
             "hit": 10,
             "coins":10,
             "opcoes": {
@@ -98,9 +98,9 @@ def carregar_cenarios():
                 }
         },
         "estacionamento": {
-                "titulo": "s sala de teleporte",
+                "titulo": "A sala de teleporte",
                 "descricao": "diga o nome de onde voce quer ir",
-                "monstro": "veterano",
+                "monstro": "Monstro do Estacionamento",
                 "hit": 10,
                 "coins":10,
                 "opcoes": {
@@ -113,9 +113,8 @@ def carregar_cenarios():
 
     nome_cenario_atual = "inicio"
     return cenarios, nome_cenario_atual
+   
 
-
-        
 
 def main():
     print("Na hora do sufoco!")
@@ -145,6 +144,12 @@ def main():
             print("Acabaram-se suas opções! Mwo mwo mwooooo...")
             game_over = True
         else:
+            print()
+            print(cenarios[nome_cenario_atual]["titulo"])
+            x = len(cenarios[nome_cenario_atual]["titulo"])
+            print(x*"-")
+            print(cenarios[nome_cenario_atual]["descricao"])
+            print()
             print("Escolha sua opção: ")
             opcoes= (cenarios[nome_cenario_atual]["opcoes"])
             for lugar, caminho in opcoes.items():
@@ -157,7 +162,7 @@ def main():
             
             if escolha!= "ovo" and escolha!="papel" and escolha!= "bola" and escolha!= "livro":
                 cenarios, nome_cenario_atual = carregar_cenarios()
-                
+
                 monstro=(cenario_atual["monstro"])
                 hit=(cenario_atual["hit"])
                 coins= (cenario_atual["coins"])
@@ -250,13 +255,4 @@ def main():
 # Programa principal.
 if __name__ == "__main__":
     main()
-
-
-    
-    
-    
-    
-    
-    
-    
-    
+   
